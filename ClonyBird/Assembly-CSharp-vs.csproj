@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\BGLooper.cs" />
      <Compile Include="Assets\BirdMovement.cs" />
+     <Compile Include="Assets\BirdReskin.cs" />
      <Compile Include="Assets\CameraTracksPlayer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Softwares/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
