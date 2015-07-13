@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class BirdMovement : MonoBehaviour {
-	Vector3 velocity = Vector3.zero;
-	float flapSpeed = 100f;
+	float flapSpeed = 70f;
 	float forwardSpeed = 1f;
+	bool dead = false;
 
 	Rigidbody2D bird;
 	Animator animator;
@@ -27,6 +27,8 @@ public class BirdMovement : MonoBehaviour {
 	
 	// Physics go here
 	void FixedUpdate () {
+		if (dead) return;
+
 		bird.AddForce(Vector2.right * forwardSpeed);
 
 		if (didFlap) {
@@ -35,7 +37,8 @@ public class BirdMovement : MonoBehaviour {
 			animator.SetTrigger("DoFlap");
 
 			if (bird.velocity.y < 0) 
-				bird.AddForce(Vector2.up * (-bird.velocity.y));
+				bird.velocity = Vector2.right;
+
 			bird.AddForce(Vector2.up * flapSpeed);
 		}
 
@@ -43,7 +46,12 @@ public class BirdMovement : MonoBehaviour {
 		if (bird.velocity.y < 0.25f) 
 			angle = Mathf.Lerp(0, -90, -(bird.velocity.y+0.25f) / 2f);
 		transform.rotation = Quaternion.Euler(0,0,angle);
+	}
 	
+	void OnCollisionEnter2D(Collision2D collision) {
+		animator.SetTrigger("Death");
+		dead = true;
+	}
 
 
 
@@ -67,5 +75,5 @@ public class BirdMovement : MonoBehaviour {
 //			angle = Mathf.Lerp(0, -90, -velocity.y / maxSpeed);
 //		}
 //		transform.rotation = Quaternion.Euler (0, 0, angle);
-	}
+
 }

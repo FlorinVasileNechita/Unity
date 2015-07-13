@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BirdMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BGLooper.cs">
     <Files>
-      <File FileName="Assets\BGLooper.cs" Line="14" Column="62" />
-      <File FileName="Assets\CameraTracksPlayer.cs" Line="23" Column="3" />
-      <File FileName="Assets\BirdMovement.cs" Line="36" Column="4" />
-      <File FileName="Assets\GroundMover.cs" Line="6" Column="17" />
+      <File FileName="Assets\BirdMovement.cs" Line="5" Column="21" />
+      <File FileName="Assets\BGLooper.cs" Line="12" Column="61" />
+      <File FileName="Assets\CameraTracksPlayer.cs" Line="6" Column="16" />
+      <File FileName="Assets\GroundMover.cs" Line="15" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

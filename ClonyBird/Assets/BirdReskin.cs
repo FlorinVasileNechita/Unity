@@ -9,7 +9,6 @@ public class BirdReskin : MonoBehaviour {
 	// Use this for initialization
 	void Start () {	
 		spriteIndex = Random.Range (0,numOfSprites);
-		spriteIndex = 1;
 	}
 	
 	// LateUpdate is called once per frame after Update
