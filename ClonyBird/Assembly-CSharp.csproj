@@ -50,6 +50,7 @@
      <Compile Include="Assets\BirdMovement.cs" />
      <Compile Include="Assets\BirdReskin.cs" />
      <Compile Include="Assets\CameraTracksPlayer.cs" />
+     <Compile Include="Assets\GroundMover.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Softwares/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

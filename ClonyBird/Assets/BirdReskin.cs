@@ -2,25 +2,21 @@
 using System.Collections;
 
 public class BirdReskin : MonoBehaviour {
-
 	public Sprite[] birdSprites;
-	int spriteNum;
+	int numOfSprites = 3;
+	int spriteIndex;
 
 	// Use this for initialization
 	void Start () {	
-		spriteNum = Random.Range (0,3);
+		spriteIndex = Random.Range (0,numOfSprites);
+		spriteIndex = 1;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		StartCoroutine(Reskin());
-	}
-
-	IEnumerator Reskin() {
-		while (true)
-		for (int i=spriteNum*12; i < spriteNum*12+12; i++) { //numOfFrames(4) * numOfSprites(3)
-			this.gameObject.GetComponent<SpriteRenderer>().sprite = birdSprites[i/4];
-			yield return 0;
-		}
+	// LateUpdate is called once per frame after Update
+	// Order is Update() -> Animator -> LateUpdate()
+	void LateUpdate () {
+		SpriteRenderer render = GetComponent<SpriteRenderer>();
+		for (int i = 0; i < 3; i++) if (render.sprite.name == birdSprites[i].name)
+			render.sprite = birdSprites[i+spriteIndex*numOfSprites];
 	}
 }
