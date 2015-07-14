@@ -26,6 +26,7 @@ public class BGLooper : MonoBehaviour {
 		if (collider.tag == "Pipe") {
 			pos.x += widthOfBGObject/2f;
 			pos.y = Random.Range(pipeMin,pipeMax);
+			collider.transform.Find("ScoreBox").gameObject.SetActive(true);
 		}
 
 		collider.transform.position = pos;

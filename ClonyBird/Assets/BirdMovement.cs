@@ -4,7 +4,8 @@ using System.Collections;
 public class BirdMovement : MonoBehaviour {
 	float flapSpeed = 90f;
 	float forwardSpeed = 1f;
-	bool dead = false;
+	float deathCooldown;
+	public bool dead = false;
 
 	Rigidbody2D bird;
 	Animator animator;
@@ -20,8 +21,18 @@ public class BirdMovement : MonoBehaviour {
 
 	//Graphics and Inputs go here
 	void Update() {
-		if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
-			didFlap = true;
+		if (dead) {
+			deathCooldown -= Time.deltaTime;
+			if (deathCooldown  <= 0)
+				if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+					Application.LoadLevel(Application.loadedLevel);
+
+
+		}
+		else {
+			if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
+				didFlap = true;
+			}
 		}
 	}
 	
@@ -51,6 +62,7 @@ public class BirdMovement : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		animator.SetTrigger("Death");
 		dead = true;
+		deathCooldown = 0.5f;
 	}
 
 
