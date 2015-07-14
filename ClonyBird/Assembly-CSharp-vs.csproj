@@ -51,6 +51,8 @@
      <Compile Include="Assets\BirdReskin.cs" />
      <Compile Include="Assets\CameraTracksPlayer.cs" />
      <Compile Include="Assets\GroundMover.cs" />
+     <Compile Include="Assets\Score.cs" />
+     <Compile Include="Assets\ScorePoint.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Softwares/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

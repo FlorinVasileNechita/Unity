@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BirdMovement : MonoBehaviour {
-	float flapSpeed = 70f;
+	float flapSpeed = 90f;
 	float forwardSpeed = 1f;
 	bool dead = false;
 
